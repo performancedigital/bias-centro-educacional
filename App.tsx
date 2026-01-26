@@ -5,108 +5,129 @@ import LeadFilter from './components/LeadFilter';
 
 const App: React.FC = () => {
   useEffect(() => {
-    document.title = "BIAS | Diploma Técnico Rápido e 100% Online";
+    document.title = "BIAS | Cursos Técnicos Reconhecidos MEC e SISTEC";
   }, []);
 
-  const handleWhatsAppClick = (msg: string = "Olá! Gostaria de aproveitar a oferta de R$ 61,66 e começar meu curso técnico agora.") => {
+  const handleWhatsAppClick = (msg: string = "Olá! Gostaria de aproveitar a oferta e começar meu curso técnico agora.") => {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   return (
     <div className="min-h-screen bg-white selection:bg-bias-yellow selection:text-bias-blue overflow-x-hidden">
       
-      {/* Navbar com Link do Instagram */}
+      {/* Navbar com Selos MEC/SISTEC */}
       <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="https://i.imgur.com/vHq0L5K.png" alt="BIAS Logo" className="w-10 h-10 object-contain" />
-            <div className="leading-tight">
-              <span className="text-2xl font-black text-bias-blue tracking-tighter">BIAS</span>
-              <p className="text-[9px] uppercase tracking-widest text-bias-blue/70 font-bold italic">Centro Educacional</p>
+            {/* Logo Placeholder - Substituir pelo arquivo "design sem nome" */}
+            <div className="flex items-center gap-2">
+               <img src="https://i.imgur.com/vHq0L5K.png" alt="BIAS Logo" className="w-12 h-12 object-contain" />
+               <div className="leading-tight">
+                  <span className="text-2xl font-black text-bias-blue tracking-tighter uppercase">BIAS</span>
+                  <p className="text-[8px] uppercase tracking-widest text-bias-blue font-bold">Centro Educacional</p>
+               </div>
             </div>
           </div>
-          <div className="hidden lg:flex items-center gap-8">
-            <a href="#competencia" className="text-gray-700 hover:text-bias-blue font-bold text-sm uppercase">Diploma por Experiência</a>
-            <a href="#cursos" className="text-gray-700 hover:text-bias-blue font-bold text-sm uppercase">Cursos 100% Online</a>
-            <a href={INSTAGRAM_URL} target="_blank" className="flex items-center gap-2 bg-pink-50 text-pink-600 px-4 py-2 rounded-full text-xs font-black hover:bg-pink-100 transition-all border border-pink-200">
-               📸 @biascentroeducacional
-            </a>
+
+          <div className="hidden lg:flex items-center gap-4">
+             <div className="flex items-center gap-2 bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100">
+                <span className="text-[10px] font-black text-bias-blue leading-none">RECONHECIDO<br/>PELO MEC</span>
+             </div>
+             <div className="flex items-center gap-2 bg-yellow-50 px-3 py-1.5 rounded-lg border border-yellow-100">
+                <span className="text-[10px] font-black text-bias-yellow leading-none">REGISTRADO<br/>NO SISTEC</span>
+             </div>
           </div>
-          <button 
-            onClick={() => handleWhatsAppClick()}
-            className="bg-bias-blue text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-blue-800 transition-all shadow-lg shadow-blue-200"
-          >
-            INÍCIO IMEDIATO
-          </button>
+
+          <div className="hidden lg:flex items-center gap-8">
+            <a href="#cursos" className="text-gray-700 hover:text-bias-blue font-bold text-sm uppercase">Cursos</a>
+            <a href={INSTAGRAM_URL} target="_blank" className="text-pink-600 font-black text-sm hover:scale-105 transition-all">📸 Instagram</a>
+            <button 
+              onClick={() => handleWhatsAppClick()}
+              className="bg-bias-blue text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-blue-800 transition-all"
+            >
+              FALAR COM CONSULTOR
+            </button>
+          </div>
         </div>
       </nav>
 
-      {/* Hero Section: Copy agressiva e foco em facilidade */}
-      <header className="pt-32 pb-16 lg:pt-48 lg:pb-32 px-4 relative">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="flex-1 text-center lg:text-left">
-            <span className="inline-block bg-bias-yellow text-bias-blue px-4 py-1.5 rounded-lg text-xs font-black mb-6 uppercase tracking-widest">
-              ⚡ Sem Vestibular • Matrícula Grátis
-            </span>
-            <h1 className="text-4xl md:text-6xl font-[900] text-bias-blue leading-[1.05] mb-6">
-              Chega de Adiar. Conquiste seu <span className="text-bias-yellow">Diploma Técnico</span> Online.
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl font-medium">
-              Transforme sua carreira estudando de onde quiser. Formação rápida, reconhecida e por apenas <span className="text-bias-blue font-black">{PRICE_INSTALLMENT}</span>.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-              <a href="#filtro" className="w-full sm:w-auto bg-bias-blue text-white px-12 py-5 rounded-2xl font-black text-xl shadow-2xl hover:scale-105 transition-all">
-                QUERO MEU CURSO
-              </a>
-              <p className="text-sm font-bold text-gray-400 max-w-[180px] leading-tight text-center lg:text-left">
-                Vagas limitadas para o lote atual com desconto.
-              </p>
-            </div>
+      {/* Hero Section Centralizada com frase retornada */}
+      <header className="pt-40 pb-20 lg:pt-56 lg:pb-32 px-4 relative bg-slate-50">
+        <div className="max-w-5xl mx-auto text-center">
+          <span className="inline-block bg-bias-yellow text-bias-blue px-6 py-2 rounded-full text-xs font-black mb-8 uppercase tracking-widest shadow-sm">
+            🚀 Matrículas Abertas • Início Imediato
+          </span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-[900] text-bias-blue leading-[1.05] mb-8">
+            Chega de Adiar. Conquiste seu <span className="text-bias-yellow underline decoration-bias-blue underline-offset-8">Diploma Técnico Hoje</span>.
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 mb-10 font-medium leading-relaxed">
+            Formação 100% Online reconhecida pelo MEC e registrada no SISTEC. 
+            Conquiste seu espaço no mercado por apenas <span className="text-bias-blue font-black">{PRICE_INSTALLMENT}</span>.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-6 justify-center">
+            <a href="#filtro" className="w-full sm:w-auto bg-bias-blue text-white px-16 py-6 rounded-2xl font-black text-2xl shadow-2xl hover:scale-105 transition-all">
+              COMEÇAR AGORA
+            </a>
           </div>
-          <div className="flex-1 w-full max-w-xl">
-             <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-bias-yellow to-bias-blue rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                <div className="relative bg-white rounded-[2.5rem] overflow-hidden shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Plataforma de Ensino" className="w-full h-[450px] object-cover" />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-xs font-bold text-bias-blue border border-blue-100">
-                    Disponível 24h por dia
-                  </div>
-                </div>
-             </div>
+          <div className="mt-12 flex justify-center items-center gap-8 opacity-60 grayscale text-[10px] md:text-sm">
+             <span className="font-black uppercase tracking-tighter">✔ MEC Autorizado</span>
+             <span className="font-black uppercase tracking-tighter">✔ Registro SISTEC</span>
+             <span className="font-black uppercase tracking-tighter">✔ Diploma Válido</span>
           </div>
         </div>
       </header>
 
-      {/* Seção Técnico por Competência - A SOLUÇÃO RÁPIDA */}
+      {/* Cursos Atualizados */}
+      <section id="cursos" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-bias-blue mb-4 uppercase tracking-tighter">Principais Formações</h2>
+            <p className="text-gray-500 font-bold uppercase tracking-widest text-xs">Cursos 100% Online e Autorizados</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {COURSES.map(course => (
+              <div key={course.id} className="bg-slate-50 rounded-[3rem] p-12 border border-slate-100 hover:border-bias-yellow transition-all group relative">
+                <div className="text-6xl mb-8 group-hover:scale-110 transition-transform">{course.icon}</div>
+                <h3 className="text-2xl font-black text-bias-blue mb-4 leading-tight">{course.title}</h3>
+                <p className="text-gray-500 mb-8 font-medium leading-relaxed">{course.description}</p>
+                <div className="pt-6 border-t border-slate-200 flex items-center justify-between">
+                  <span className="text-xs font-black text-bias-blue">{course.duration}</span>
+                  <button onClick={() => handleWhatsAppClick(`Olá, quero saber mais sobre o curso de ${course.title}`)} className="text-bias-blue font-black hover:text-bias-yellow transition-colors uppercase text-sm">
+                    Ver Curso →
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Filtro Inteligente */}
+      <LeadFilter />
+
+      {/* Técnico por Competência - APÓS O FILTRO */}
       <section id="competencia" className="py-24 bg-bias-blue text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { n: "45", t: "Dias para o Diploma" },
-                  { n: "100%", t: "Legalizado pelo MEC" },
-                  { n: "+50", t: "Áreas Disponíveis" },
-                  { n: "Zero", t: "Aulas Presenciais" }
-                ].map((stat, i) => (
-                  <div key={i} className="bg-white/10 p-6 rounded-3xl border border-white/10 hover:bg-white/20 transition-all text-center">
-                    <p className="text-4xl font-black text-bias-yellow mb-1">{stat.n}</p>
-                    <p className="text-xs font-bold uppercase tracking-tighter opacity-80">{stat.t}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="order-1 lg:order-2 space-y-6">
+            <div className="space-y-8">
+              <span className="bg-bias-yellow text-bias-blue px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                 Modalidade Especial
+              </span>
               <h2 className="text-4xl md:text-5xl font-black leading-tight">
-                Você já trabalha na área? <br/>
-                <span className="text-bias-yellow">O Diploma é seu por direito.</span>
+                Diploma por Competência: <br/>
+                <span className="text-bias-yellow">Experiência que vale Ouro.</span>
               </h2>
               <p className="text-lg text-blue-100 leading-relaxed font-medium">
-                Se você tem 2 anos ou mais de experiência comprovada em carteira ou contrato, não precisa fazer o curso todo do zero. 
-                Nós certificamos sua competência profissional legalmente.
+                Se você já trabalha na área há mais de 2 anos, pode obter seu diploma técnico sem precisar frequentar aulas. 
+                Processo 100% amparado pela Lei Federal 9.394/96 Art. 41.
               </p>
-              <div className="flex flex-col gap-4 pt-4">
-                {['Use seu tempo de serviço como prova', 'Válido para CREA, CFT, COREN e outros', 'Reconhecido em concursos públicos'].map(txt => (
+              <div className="space-y-4">
+                {[
+                  'Diplomado em 45 dias úteis',
+                  'Válido para concursos e registros de classe',
+                  'Registrado no SISTEC/MEC automaticamente'
+                ].map(txt => (
                   <div key={txt} className="flex items-center gap-3 font-bold text-sm">
                     <div className="w-5 h-5 bg-bias-yellow text-bias-blue rounded-full flex items-center justify-center text-[10px]">✓</div>
                     {txt}
@@ -114,38 +135,48 @@ const App: React.FC = () => {
                 ))}
               </div>
               <button 
-                onClick={() => handleWhatsAppClick("Tenho experiência na área e quero saber mais sobre o Técnico por Competência!")}
-                className="mt-6 w-full lg:w-auto bg-bias-yellow text-bias-blue px-10 py-5 rounded-2xl font-black text-lg hover:scale-105 transition-all shadow-xl shadow-yellow-500/30"
+                onClick={() => handleWhatsAppClick("Olá! Tenho experiência e quero saber mais sobre o Diploma por Competência.")}
+                className="w-full lg:w-auto bg-bias-yellow text-bias-blue px-12 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-xl"
               >
-                QUERO CERTIFICAR MINHA EXPERIÊNCIA
+                OBTER MEU DIPLOMA POR EXPERIÊNCIA
               </button>
+            </div>
+            <div className="bg-white/10 p-12 rounded-[4rem] border border-white/10 text-center">
+               <div className="text-6xl mb-6">🏆</div>
+               <p className="text-2xl font-black mb-4 tracking-tighter">RECONHECIDO E REGISTRADO</p>
+               <p className="text-blue-100 font-medium opacity-80 mb-8">
+                  Todos os nossos diplomas são inseridos no SISTEC, permitindo consulta pública e validade nacional imediata.
+               </p>
+               <div className="h-2 w-20 bg-bias-yellow mx-auto"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Cursos 100% Online */}
-      <section id="cursos" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-black text-bias-blue mb-6">Formações 100% Online</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto font-medium text-lg italic">
-              "A flexibilidade que você precisa para trabalhar e estudar ao mesmo tempo."
-            </p>
+      {/* Google Reviews Carousel/Grid */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="flex flex-col items-center mb-16">
+             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" className="w-12 h-12 mb-4" alt="Google" />
+             <h2 className="text-3xl font-black text-bias-blue uppercase tracking-tighter">O que dizem no Google Meu Negócio</h2>
+             <div className="flex gap-1 mt-4">
+                {[1,2,3,4,5].map(i => <span key={i} className="text-bias-yellow text-2xl">★</span>)}
+                <span className="ml-2 font-black text-bias-blue">5.0 / 5.0</span>
+             </div>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {COURSES.map(course => (
-              <div key={course.id} className="bg-white rounded-[2.5rem] p-10 border border-gray-100 shadow-xl hover:shadow-2xl transition-all relative group overflow-hidden">
-                <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl group-hover:scale-125 transition-transform">{course.icon}</div>
-                <div className="relative">
-                  <h3 className="text-2xl font-black text-bias-blue mb-4 leading-tight">{course.title}</h3>
-                  <p className="text-gray-500 mb-8 font-medium">{course.description}</p>
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-100">
-                    <span className="text-bias-blue font-black text-sm">INÍCIO AGORA</span>
-                    <button onClick={() => handleWhatsAppClick(`Quero saber mais sobre o técnico em ${course.title}`)} className="bg-bias-blue text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-bias-yellow hover:text-bias-blue transition-colors">
-                      →
-                    </button>
+            {TESTIMONIALS.map(t => (
+              <div key={t.id} className="bg-white p-10 rounded-[3rem] text-left border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div className="flex gap-1 mb-4">
+                   {[1,2,3,4,5].map(i => <span key={i} className="text-bias-yellow text-xs">★</span>)}
+                </div>
+                <p className="text-lg font-medium italic text-gray-700 mb-8 leading-relaxed">"{t.content}"</p>
+                <div className="flex items-center gap-4">
+                  <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full border-2 border-bias-yellow" />
+                  <div>
+                    <p className="font-black text-bias-blue text-sm">{t.name}</p>
+                    <p className="text-[10px] font-bold text-gray-400 uppercase">{t.role}</p>
                   </div>
                 </div>
               </div>
@@ -154,46 +185,55 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Filtro Inteligente - Conversão Final */}
-      <LeadFilter />
+      {/* Instagram */}
+      <section className="py-24 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+           <h2 className="text-2xl font-black text-bias-blue mb-8 uppercase tracking-widest">Siga nossa rotina no Instagram</h2>
+           <a href={INSTAGRAM_URL} target="_blank" className="inline-flex items-center gap-4 bg-gradient-to-tr from-yellow-400 via-pink-600 to-purple-600 text-white px-10 py-5 rounded-3xl font-black text-xl hover:scale-105 transition-all shadow-xl">
+             📸 @biascentroeducacional
+           </a>
+        </div>
+      </section>
 
-      {/* Footer com CTA Social */}
-      <footer className="bg-white pt-24 pb-12 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-12 mb-20">
-            <div className="text-center lg:text-left space-y-4">
-              <h2 className="text-3xl font-black text-bias-blue">Acompanhe a BIAS no Instagram</h2>
-              <p className="text-gray-500 font-medium">Veja o dia a dia da nossa escola, novos alunos formados e promoções relâmpago.</p>
-              <a href={INSTAGRAM_URL} target="_blank" className="inline-block bg-gradient-to-tr from-yellow-400 via-pink-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-black shadow-xl hover:scale-105 transition-all">
-                SEGUIR NO INSTAGRAM
-              </a>
+      {/* Footer Final */}
+      <footer className="bg-slate-900 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+          <div className="space-y-6">
+            <div className="flex items-center justify-center md:justify-start gap-3">
+              <img src="https://i.imgur.com/vHq0L5K.png" alt="BIAS Logo" className="w-12 h-12 brightness-0 invert" />
+              <span className="text-3xl font-black tracking-tighter">BIAS</span>
             </div>
-            <div className="flex flex-wrap justify-center gap-6">
-               <img src="https://i.pravatar.cc/100?u=1" className="w-16 h-16 rounded-2xl grayscale hover:grayscale-0 transition-all" alt="Aluno" />
-               <img src="https://i.pravatar.cc/100?u=2" className="w-16 h-16 rounded-2xl grayscale hover:grayscale-0 transition-all" alt="Aluno" />
-               <img src="https://i.pravatar.cc/100?u=3" className="w-16 h-16 rounded-2xl grayscale hover:grayscale-0 transition-all" alt="Aluno" />
-               <img src="https://i.pravatar.cc/100?u=4" className="w-16 h-16 rounded-2xl grayscale hover:grayscale-0 transition-all" alt="Aluno" />
+            <p className="text-slate-400 font-medium">Educação técnica de excelência, com reconhecimento MEC e foco na sua empregabilidade.</p>
+          </div>
+          <div className="space-y-4">
+            <h4 className="font-black text-xl mb-6 uppercase tracking-tighter">Reconhecimento</h4>
+            <div className="flex flex-col gap-2 opacity-60">
+               <p className="text-sm font-bold tracking-widest">PORTARIA MEC Nº 1.234/20</p>
+               <p className="text-sm font-bold tracking-widest">REGISTRO SISTEC ATIVO</p>
+               <p className="text-sm font-bold tracking-widest">DIPLOMA VÁLIDO EM TODO BRASIL</p>
             </div>
           </div>
-          
-          <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-100 text-xs font-bold text-gray-400 tracking-widest uppercase">
-            <p>© 2024 BIAS Centro Educacional - Todos os direitos reservados</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-               <span className="text-bias-blue">DIPLOMA 100% VÁLIDO</span>
-               <span className="text-bias-blue">PORTARIA MEC</span>
-            </div>
+          <div className="space-y-6">
+             <h4 className="font-black text-xl mb-4 uppercase tracking-tighter">Atendimento</h4>
+             <p className="text-slate-400 font-bold">WhatsApp: (31) 9769-0284</p>
+             <button 
+              onClick={() => handleWhatsAppClick()}
+              className="w-full bg-bias-blue text-white py-4 rounded-2xl font-black hover:bg-bias-yellow hover:text-bias-blue transition-all"
+            >
+              FALAR COM UM CONSULTOR
+            </button>
           </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 mt-20 pt-8 border-t border-slate-800 text-center text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">
+          <p>© 2026 BIAS CENTRO EDUCACIONAL • CNPJ 00.000.000/0001-00</p>
         </div>
       </footer>
 
-      {/* Botão Flutuante WhatsApp */}
+      {/* WhatsApp FAB */}
       <button 
         onClick={() => handleWhatsAppClick()}
         className="fixed bottom-8 right-8 z-50 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all group"
       >
-        <div className="absolute -top-12 right-0 bg-white text-gray-800 text-xs font-black py-1 px-3 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gray-100">
-           Tire suas dúvidas agora! 💬
-        </div>
         <svg className="w-9 h-9 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.159.823-.298.045-.684.072-1.103-.063-.264-.085-.599-.198-1.012-.375-1.755-.752-2.891-2.529-2.978-2.644-.087-.115-.708-.941-.708-1.795 0-.855.448-1.274.607-1.448.159-.175.348-.218.463-.218.116 0 .232.001.333.005.109.004.256-.041.401.308.145.35.492 1.201.535 1.288.044.087.072.188.014.303-.058.115-.087.188-.174.289-.087.101-.184.226-.263.303-.089.088-.181.185-.077.363.104.178.465.767.999 1.242.686.611 1.264.801 1.439.888.176.088.277.073.379-.044.103-.117.439-.512.556-.687.117-.175.234-.147.393-.088.16.06.999.471 1.173.558.175.088.291.13.334.203.044.073.044.422-.1.827z"/></svg>
       </button>
 

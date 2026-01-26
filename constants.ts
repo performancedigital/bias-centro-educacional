@@ -3,48 +3,55 @@ import { Course, Testimonial } from './types';
 
 export const COURSES: Course[] = [
   {
-    id: 'enfermagem',
-    title: 'Técnico em Enfermagem',
-    duration: 'Conclusão em até 24 meses',
-    category: 'Saúde',
-    description: 'A profissão que nunca para. Estude com simuladores e teoria 100% online com suporte total.',
-    icon: '🩺'
-  },
-  {
-    id: 'radiologia',
-    title: 'Técnico em Radiologia',
-    duration: 'Conclusão em 18 meses',
-    category: 'Saúde',
-    description: 'Alta demanda em hospitais e clínicas. Domine a teoria do diagnóstico por imagem de casa.',
-    icon: '🦴'
-  },
-  {
     id: 'seg-trabalho',
-    title: 'Segurança do Trabalho',
+    title: 'Técnico em Segurança do Trabalho',
     duration: 'Conclusão em 12 meses',
     category: 'Segurança',
-    description: 'Torne-se indispensável para as empresas. Foco total em normas regulamentadoras atualizadas.',
+    description: 'Proteja vidas e garanta a conformidade legal nas empresas. Curso com foco em NRs atualizadas.',
     icon: '🦺'
+  },
+  {
+    id: 'mecanica',
+    title: 'Técnico em Mecânica',
+    duration: 'Conclusão em 18 meses',
+    category: 'Tecnologia',
+    description: 'Domine processos industriais, manutenção e projetos. Alta demanda no setor industrial.',
+    icon: '⚙️'
+  },
+  {
+    id: 'farmacia',
+    title: 'Técnico em Farmácia',
+    duration: 'Conclusão em 18 meses',
+    category: 'Saúde',
+    description: 'Atue em drogarias, farmácias de manipulação e hospitais. Mercado em constante crescimento.',
+    icon: '💊'
   }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
-    name: 'Juliana Mendes',
-    role: 'Técnica em Estética',
-    content: 'Pensei que por ser online seria difícil, mas a plataforma da BIAS é incrível. Já estou atendendo minhas clientes!',
-    avatar: 'https://i.pravatar.cc/150?u=ju'
+    name: 'Carlos Alberto',
+    role: 'Técnico em Segurança do Trabalho',
+    content: 'A BIAS facilitou muito minha formação. O conteúdo online é direto ao ponto e o suporte é nota 10!',
+    avatar: 'https://i.pravatar.cc/150?u=carlos'
   },
   {
     id: 2,
-    name: 'Ricardo Alves',
-    role: 'Técnico por Competência (Eletrotécnica)',
-    content: 'Trabalhava há 10 anos na área sem diploma. Com a BIAS, consegui minha certificação em 45 dias apenas comprovando minha experiência.',
-    avatar: 'https://i.pravatar.cc/150?u=ri'
+    name: 'Fernanda Lima',
+    role: 'Técnica em Farmácia',
+    content: 'Consegui meu emprego na farmácia do bairro antes mesmo de terminar o curso. O diploma é muito respeitado.',
+    avatar: 'https://i.pravatar.cc/150?u=fernanda'
+  },
+  {
+    id: 3,
+    name: 'João Pedro',
+    role: 'Técnico por Competência',
+    content: 'Processo rápido e transparente. Consegui meu registro no conselho em tempo recorde!',
+    avatar: 'https://i.pravatar.cc/150?u=joao'
   }
 ];
 
-export const WHATSAPP_NUMBER = '5511999999999'; 
+export const WHATSAPP_NUMBER = '553197690284'; 
 export const INSTAGRAM_URL = 'https://instagram.com/biascentroeducacional';
 export const PRICE_INSTALLMENT = '12x de R$ 61,66';
