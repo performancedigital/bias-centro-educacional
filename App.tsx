@@ -21,7 +21,7 @@ const App: React.FC = () => {
           <div className="flex items-center gap-3">
             {/* Logo - Substitua o src abaixo pelo link do seu GitHub após o upload */}
             <div className="flex items-center gap-2">
-               <img src="https://github.com/performancedigital/bias-centro-educacional/blob/main/logo-bias.png.png" alt="BIAS Logo" className="w-12 h-12 object-contain" />
+               <img src="https://github.com/performancedigital/bias-centro-educacional/blob/5bab85aaa608e7540bdbdc545f2503dffe5e63ea/logo-bias.png" alt="BIAS Logo" className="w-12 h-12 object-contain" />
                <div className="leading-tight">
                   <span className="text-2xl font-black text-bias-blue tracking-tighter uppercase">BIAS</span>
                   <p className="text-[8px] uppercase tracking-widest text-bias-blue font-bold">Centro Educacional</p>
@@ -202,7 +202,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
           <div className="space-y-6">
             <div className="flex items-center justify-center md:justify-start gap-3">
-              <img src="https://github.com/performancedigital/bias-centro-educacional/blob/main/logo-bias.png.png" alt="BIAS Logo" className="w-12 h-12 brightness-0 invert" />
+              <img src="https://github.com/performancedigital/bias-centro-educacional/blob/5bab85aaa608e7540bdbdc545f2503dffe5e63ea/logo-bias.png"BIAS Logo" className="w-12 h-12 brightness-0 invert" />
               <span className="text-3xl font-black tracking-tighter">BIAS</span>
             </div>
             <p className="text-slate-400 font-medium">Educação técnica de excelência, com reconhecimento MEC e foco na sua empregabilidade.</p>
