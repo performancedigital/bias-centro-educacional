@@ -19,9 +19,9 @@ const App: React.FC = () => {
       <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            {/* Logo Placeholder - Substituir pelo arquivo "design sem nome" */}
+            {/* Logo - Substitua o src abaixo pelo link do seu GitHub após o upload */}
             <div className="flex items-center gap-2">
-               <img src="https://i.imgur.com/vHq0L5K.png" alt="BIAS Logo" className="w-12 h-12 object-contain" />
+               <img src="https://github.com/performancedigital/bias-centro-educacional/blob/main/logo-bias.png.png" alt="BIAS Logo" className="w-12 h-12 object-contain" />
                <div className="leading-tight">
                   <span className="text-2xl font-black text-bias-blue tracking-tighter uppercase">BIAS</span>
                   <p className="text-[8px] uppercase tracking-widest text-bias-blue font-bold">Centro Educacional</p>
@@ -43,7 +43,7 @@ const App: React.FC = () => {
             <a href={INSTAGRAM_URL} target="_blank" className="text-pink-600 font-black text-sm hover:scale-105 transition-all">📸 Instagram</a>
             <button 
               onClick={() => handleWhatsAppClick()}
-              className="bg-bias-blue text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-blue-800 transition-all"
+              className="bg-bias-blue text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-blue-800 transition-all shadow-lg shadow-blue-200"
             >
               FALAR COM CONSULTOR
             </button>
@@ -51,7 +51,7 @@ const App: React.FC = () => {
         </div>
       </nav>
 
-      {/* Hero Section Centralizada com frase retornada */}
+      {/* Hero Section Centralizada */}
       <header className="pt-40 pb-20 lg:pt-56 lg:pb-32 px-4 relative bg-slate-50">
         <div className="max-w-5xl mx-auto text-center">
           <span className="inline-block bg-bias-yellow text-bias-blue px-6 py-2 rounded-full text-xs font-black mb-8 uppercase tracking-widest shadow-sm">
@@ -60,7 +60,7 @@ const App: React.FC = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-[900] text-bias-blue leading-[1.05] mb-8">
             Chega de Adiar. Conquiste seu <span className="text-bias-yellow underline decoration-bias-blue underline-offset-8">Diploma Técnico Hoje</span>.
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-10 font-medium leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 mb-10 font-medium leading-relaxed max-w-3xl mx-auto">
             Formação 100% Online reconhecida pelo MEC e registrada no SISTEC. 
             Conquiste seu espaço no mercado por apenas <span className="text-bias-blue font-black">{PRICE_INSTALLMENT}</span>.
           </p>
@@ -77,7 +77,7 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      {/* Cursos Atualizados */}
+      {/* Cursos */}
       <section id="cursos" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
@@ -110,19 +110,19 @@ const App: React.FC = () => {
       <section id="competencia" className="py-24 bg-bias-blue text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-8">
+            <div className="space-y-8 text-center lg:text-left">
               <span className="bg-bias-yellow text-bias-blue px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
                  Modalidade Especial
               </span>
               <h2 className="text-4xl md:text-5xl font-black leading-tight">
-                Diploma por Competência: <br/>
-                <span className="text-bias-yellow">Experiência que vale Ouro.</span>
+                Você já trabalha na área? <br/>
+                <span className="text-bias-yellow">O Diploma é seu por direito.</span>
               </h2>
               <p className="text-lg text-blue-100 leading-relaxed font-medium">
                 Se você já trabalha na área há mais de 2 anos, pode obter seu diploma técnico sem precisar frequentar aulas. 
                 Processo 100% amparado pela Lei Federal 9.394/96 Art. 41.
               </p>
-              <div className="space-y-4">
+              <div className="space-y-4 inline-block text-left">
                 {[
                   'Diplomado em 45 dias úteis',
                   'Válido para concursos e registros de classe',
@@ -134,18 +134,20 @@ const App: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <button 
-                onClick={() => handleWhatsAppClick("Olá! Tenho experiência e quero saber mais sobre o Diploma por Competência.")}
-                className="w-full lg:w-auto bg-bias-yellow text-bias-blue px-12 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-xl"
-              >
-                OBTER MEU DIPLOMA POR EXPERIÊNCIA
-              </button>
+              <div className="pt-4">
+                <button 
+                  onClick={() => handleWhatsAppClick("Olá! Tenho experiência e quero saber mais sobre o Diploma por Competência.")}
+                  className="w-full lg:w-auto bg-bias-yellow text-bias-blue px-12 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-xl"
+                >
+                  OBTER MEU DIPLOMA POR EXPERIÊNCIA
+                </button>
+              </div>
             </div>
             <div className="bg-white/10 p-12 rounded-[4rem] border border-white/10 text-center">
                <div className="text-6xl mb-6">🏆</div>
-               <p className="text-2xl font-black mb-4 tracking-tighter">RECONHECIDO E REGISTRADO</p>
+               <p className="text-2xl font-black mb-4 tracking-tighter uppercase">Reconhecido pelo MEC e SISTEC</p>
                <p className="text-blue-100 font-medium opacity-80 mb-8">
-                  Todos os nossos diplomas são inseridos no SISTEC, permitindo consulta pública e validade nacional imediata.
+                  Todos os nossos diplomas são inseridos no SISTEC, permitindo consulta pública e validade nacional imediata para o seu registro profissional.
                </p>
                <div className="h-2 w-20 bg-bias-yellow mx-auto"></div>
             </div>
@@ -153,7 +155,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Google Reviews Carousel/Grid */}
+      {/* Google Reviews */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="flex flex-col items-center mb-16">
@@ -200,7 +202,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
           <div className="space-y-6">
             <div className="flex items-center justify-center md:justify-start gap-3">
-              <img src="https://i.imgur.com/vHq0L5K.png" alt="BIAS Logo" className="w-12 h-12 brightness-0 invert" />
+              <img src="https://github.com/performancedigital/bias-centro-educacional/blob/main/logo-bias.png.png" alt="BIAS Logo" className="w-12 h-12 brightness-0 invert" />
               <span className="text-3xl font-black tracking-tighter">BIAS</span>
             </div>
             <p className="text-slate-400 font-medium">Educação técnica de excelência, com reconhecimento MEC e foco na sua empregabilidade.</p>
