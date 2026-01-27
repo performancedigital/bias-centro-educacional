@@ -28,7 +28,7 @@
       .animate-fadeIn { animation: fadeIn 0.5s ease-out forwards; }
     </style>
 
-    <!-- Facebook Pixel Code -->
+    <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -38,10 +38,14 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      
-      // O ID será inicializado via React no constants.ts
+      // O ID e o PageView são inicializados dinamicamente no App.tsx via React
     </script>
-    <!-- End Facebook Pixel Code -->
+    <noscript>
+      <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=876824591991075&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- End Meta Pixel Code -->
 
     <script type="importmap">
 {
