@@ -28,7 +28,7 @@
       .animate-fadeIn { animation: fadeIn 0.5s ease-out forwards; }
     </style>
 
-    <!-- Meta Pixel Code (Script part stays in Head) -->
+    <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -39,7 +39,10 @@
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '876824591991075');
-      fbq('track', 'PageView');
+      
+      // Implementação de ID único para deduplicação no PageView
+      var eventID = 'evt_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      fbq('track', 'PageView', {}, {eventID: eventID});
     </script>
     <!-- End Meta Pixel Code -->
 
@@ -56,7 +59,7 @@
 </script>
   </head>
   <body>
-    <!-- Meta Pixel Code (Noscript part must be in Body) -->
+    <!-- Meta Pixel Code (Noscript part) -->
     <noscript>
       <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=876824591991075&ev=PageView&noscript=1"

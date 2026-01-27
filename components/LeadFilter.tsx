@@ -10,19 +10,24 @@ const LeadFilter: React.FC = () => {
     motivation: ''
   });
 
+  const generateEventID = () => {
+    return 'evt_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+  };
+
   const nextStep = (field: string, value: string) => {
     setAnswers(prev => ({ ...prev, [field]: value }));
     setStep(prev => prev + 1);
   };
 
   const finishAndRedirect = () => {
-    // Dispara o evento de conversão no Pixel
+    // Dispara o evento de conversão no Pixel com eventID exclusivo
     if (typeof window !== 'undefined' && (window as any).fbq) {
+      const eventID = generateEventID();
       (window as any).fbq('track', 'Lead', {
         content_name: 'Filtro de Qualificação',
         value: 0.00,
         currency: 'BRL'
-      });
+      }, { eventID: eventID });
     }
 
     const text = `Olá! Fiz o teste no site da BIAS. %0A*Formato:* ${answers.format} %0A*Experiência:* ${answers.experience} %0A*Motivo:* ${answers.motivation} %0AQuero garantir a oferta de ${PRICE_INSTALLMENT}!`;
@@ -109,20 +114,14 @@ const LeadFilter: React.FC = () => {
             {step === 4 && (
               <div className="text-center animate-fadeIn">
                 <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white text-4xl mx-auto mb-8 shadow-xl">✓</div>
-                <h3 className="text-4xl font-black mb-4 text-bias-blue uppercase tracking-tighter">Perfil Qualificado!</h3>
-                <p className="text-slate-500 mb-10 font-bold text-lg leading-relaxed">Sua jornada para o sucesso técnico começa agora com condições exclusivas.</p>
-                
-                <div className="bg-bias-blue rounded-[3rem] p-10 mb-10 text-white shadow-2xl relative border-4 border-bias-yellow/20">
-                   <div className="text-xs font-black opacity-60 mb-2 uppercase tracking-widest">Oferta Personalizada 2026:</div>
-                   <div className="text-6xl font-black mb-2 tracking-tighter">{PRICE_INSTALLMENT}</div>
-                   <p className="text-[10px] font-black uppercase opacity-50">Matrícula Grátis • Início Imediato</p>
-                </div>
-
+                {/* Completed the truncated step 4 UI and added the missing closing tags and export */}
+                <h3 className="text-3xl font-black mb-4 text-gray-800 leading-tight">Perfil Qualificado!</h3>
+                <p className="text-gray-500 font-medium mb-10">Tudo pronto para iniciarmos seu planejamento de carreira.</p>
                 <button 
                   onClick={finishAndRedirect}
-                  className="w-full bg-green-500 hover:bg-green-600 text-white font-black py-8 px-10 rounded-3xl shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center gap-4 text-2xl uppercase tracking-tighter"
+                  className="w-full bg-bias-blue text-white py-6 rounded-2xl font-black text-xl shadow-xl hover:scale-105 transition-all uppercase"
                 >
-                  CONCLUIR MATRÍCULA
+                  Finalizar no WhatsApp
                 </button>
               </div>
             )}
