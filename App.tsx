@@ -1,22 +1,16 @@
 
 import React, { useEffect } from 'react';
-import { COURSES, TESTIMONIALS, WHATSAPP_NUMBER, INSTAGRAM_URL, PRICE_INSTALLMENT, FACEBOOK_PIXEL_ID } from './constants';
+import { COURSES, TESTIMONIALS, WHATSAPP_NUMBER, INSTAGRAM_URL, PRICE_INSTALLMENT } from './constants';
 import LeadFilter from './components/LeadFilter';
 
 const App: React.FC = () => {
   useEffect(() => {
     document.title = "BIAS | Cursos Técnicos Reconhecidos MEC e SISTEC";
-    
-    // Inicializa o Pixel
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('init', FACEBOOK_PIXEL_ID);
-      (window as any).fbq('track', 'PageView');
-    }
   }, []);
 
   const handleWhatsAppClick = (msg: string = "Olá! Gostaria de aproveitar a oferta e começar meu curso técnico agora.") => {
-    // Rastreia o clique como um evento personalizado se quiser
-    if ((window as any).fbq) {
+    // Rastreia o clique como um contato (opcional, já que o LeadFilter rastreia o lead principal)
+    if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Contact');
     }
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
