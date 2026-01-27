@@ -20,14 +20,16 @@ const LeadFilter: React.FC = () => {
   };
 
   const finishAndRedirect = () => {
-    // Dispara o evento de conversão no Pixel com eventID exclusivo
+    // Dispara o evento de Lead ao finalizar o filtro
     if (typeof window !== 'undefined' && (window as any).fbq) {
       const eventID = generateEventID();
       (window as any).fbq('track', 'Lead', {
-        content_name: 'Filtro de Qualificação',
+        content_name: 'Filtro de Qualificação Completo',
+        content_category: answers.format,
         value: 0.00,
         currency: 'BRL'
       }, { eventID: eventID });
+      console.log('[Pixel] Evento Lead enviado via Filtro');
     }
 
     const text = `Olá! Fiz o teste no site da BIAS. %0A*Formato:* ${answers.format} %0A*Experiência:* ${answers.experience} %0A*Motivo:* ${answers.motivation} %0AQuero garantir a oferta de ${PRICE_INSTALLMENT}!`;
@@ -114,7 +116,6 @@ const LeadFilter: React.FC = () => {
             {step === 4 && (
               <div className="text-center animate-fadeIn">
                 <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white text-4xl mx-auto mb-8 shadow-xl">✓</div>
-                {/* Completed the truncated step 4 UI and added the missing closing tags and export */}
                 <h3 className="text-3xl font-black mb-4 text-gray-800 leading-tight">Perfil Qualificado!</h3>
                 <p className="text-gray-500 font-medium mb-10">Tudo pronto para iniciarmos seu planejamento de carreira.</p>
                 <button 
