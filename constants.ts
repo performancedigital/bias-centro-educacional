@@ -55,3 +55,6 @@ export const TESTIMONIALS: Testimonial[] = [
 export const WHATSAPP_NUMBER = '553197690284'; 
 export const INSTAGRAM_URL = 'https://instagram.com/biascentroeducacional';
 export const PRICE_INSTALLMENT = '12x de R$ 61,66';
+
+// INSIRA SEU ID DO PIXEL AQUI:
+export const FACEBOOK_PIXEL_ID = 'SEU_ID_AQUI'; 

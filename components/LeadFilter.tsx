@@ -16,6 +16,15 @@ const LeadFilter: React.FC = () => {
   };
 
   const finishAndRedirect = () => {
+    // Dispara o evento de conversão no Pixel
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead', {
+        content_name: 'Filtro de Qualificação',
+        value: 0.00,
+        currency: 'BRL'
+      });
+    }
+
     const text = `Olá! Fiz o teste no site da BIAS. %0A*Formato:* ${answers.format} %0A*Experiência:* ${answers.experience} %0A*Motivo:* ${answers.motivation} %0AQuero garantir a oferta de ${PRICE_INSTALLMENT}!`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
   };

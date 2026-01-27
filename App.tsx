@@ -1,16 +1,29 @@
 
 import React, { useEffect } from 'react';
-import { COURSES, TESTIMONIALS, WHATSAPP_NUMBER, INSTAGRAM_URL, PRICE_INSTALLMENT } from './constants';
+import { COURSES, TESTIMONIALS, WHATSAPP_NUMBER, INSTAGRAM_URL, PRICE_INSTALLMENT, FACEBOOK_PIXEL_ID } from './constants';
 import LeadFilter from './components/LeadFilter';
 
 const App: React.FC = () => {
   useEffect(() => {
     document.title = "BIAS | Cursos Técnicos Reconhecidos MEC e SISTEC";
+    
+    // Inicializa o Pixel
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('init', FACEBOOK_PIXEL_ID);
+      (window as any).fbq('track', 'PageView');
+    }
   }, []);
 
   const handleWhatsAppClick = (msg: string = "Olá! Gostaria de aproveitar a oferta e começar meu curso técnico agora.") => {
+    // Rastreia o clique como um evento personalizado se quiser
+    if ((window as any).fbq) {
+      (window as any).fbq('track', 'Contact');
+    }
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
   };
+
+  // URL RAW da imagem para funcionar corretamente no navegador
+  const LOGO_URL = "https://raw.githubusercontent.com/performancedigital/bias-centro-educacional/5bab85aaa608e7540bdbdc545f2503dffe5e63ea/logo-bias.png";
 
   return (
     <div className="min-h-screen bg-white selection:bg-bias-yellow selection:text-bias-blue overflow-x-hidden">
@@ -19,9 +32,8 @@ const App: React.FC = () => {
       <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            {/* Logo - Substitua o src abaixo pelo link do seu GitHub após o upload */}
             <div className="flex items-center gap-2">
-               <img src="https://github.com/performancedigital/bias-centro-educacional/blob/5bab85aaa608e7540bdbdc545f2503dffe5e63ea/logo-bias.png" alt="BIAS Logo" className="w-12 h-12 object-contain" />
+               <img src={LOGO_URL} alt="BIAS Logo" className="w-12 h-12 object-contain" />
                <div className="leading-tight">
                   <span className="text-2xl font-black text-bias-blue tracking-tighter uppercase">BIAS</span>
                   <p className="text-[8px] uppercase tracking-widest text-bias-blue font-bold">Centro Educacional</p>
@@ -106,7 +118,7 @@ const App: React.FC = () => {
       {/* Filtro Inteligente */}
       <LeadFilter />
 
-      {/* Técnico por Competência - APÓS O FILTRO */}
+      {/* Técnico por Competência */}
       <section id="competencia" className="py-24 bg-bias-blue text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -202,7 +214,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
           <div className="space-y-6">
             <div className="flex items-center justify-center md:justify-start gap-3">
-              <img src="https://github.com/performancedigital/bias-centro-educacional/blob/5bab85aaa608e7540bdbdc545f2503dffe5e63ea/logo-bias.png"BIAS Logo" className="w-12 h-12 brightness-0 invert" />
+              <img src={LOGO_URL} alt="BIAS Logo" className="w-12 h-12 brightness-0 invert" />
               <span className="text-3xl font-black tracking-tighter">BIAS</span>
             </div>
             <p className="text-slate-400 font-medium">Educação técnica de excelência, com reconhecimento MEC e foco na sua empregabilidade.</p>
