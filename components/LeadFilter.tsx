@@ -32,7 +32,9 @@ const LeadFilter: React.FC = () => {
       console.log('[Pixel] Evento Lead enviado via Filtro');
     }
 
-    const text = `Olá! Fiz o teste no site da BIAS. %0A*Formato:* ${answers.format} %0A*Experiência:* ${answers.experience} %0A*Motivo:* ${answers.motivation} %0AQuero garantir a oferta de ${PRICE_INSTALLMENT}!`;
+    // Mensagem limpa sem símbolos de formatação e com quebras de linha reais para o encodeURIComponent
+    const text = `Olá! Fiz o teste no site da BIAS.\n\nFormato: ${answers.format}\nExperiência: ${answers.experience}\nMotivo: ${answers.motivation}\n\nQuero garantir a oferta de ${PRICE_INSTALLMENT}!`;
+    
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
