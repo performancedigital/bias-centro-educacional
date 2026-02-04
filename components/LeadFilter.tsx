@@ -20,7 +20,6 @@ const LeadFilter: React.FC = () => {
   };
 
   const finishAndRedirect = () => {
-    // Dispara o evento de Lead ao finalizar o filtro
     if (typeof window !== 'undefined' && (window as any).fbq) {
       const eventID = generateEventID();
       (window as any).fbq('track', 'Lead', {
@@ -29,12 +28,9 @@ const LeadFilter: React.FC = () => {
         value: 0.00,
         currency: 'BRL'
       }, { eventID: eventID });
-      console.log('[Pixel] Evento Lead enviado via Filtro');
     }
 
-    // Mensagem limpa sem símbolos de formatação e com quebras de linha reais para o encodeURIComponent
     const text = `Olá! Fiz o teste no site da BIAS.\n\nFormato: ${answers.format}\nExperiência: ${answers.experience}\nMotivo: ${answers.motivation}\n\nQuero garantir a oferta de ${PRICE_INSTALLMENT}!`;
-    
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -118,7 +114,8 @@ const LeadFilter: React.FC = () => {
             {step === 4 && (
               <div className="text-center animate-fadeIn">
                 <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white text-4xl mx-auto mb-8 shadow-xl">✓</div>
-                <h3 className="text-3xl font-black mb-4 text-gray-800 leading-tight">Perfil Qualificado!</h3>
+                <h3 className="text-3xl font-black mb-2 text-gray-800 leading-tight">Perfil Qualificado!</h3>
+                <p className="text-bias-blue font-black text-lg mb-6 uppercase tracking-tight">Você está qualificado para uma oportunidade de 12x R$61,67</p>
                 <p className="text-gray-500 font-medium mb-10">Tudo pronto para iniciarmos seu planejamento de carreira.</p>
                 <button 
                   onClick={finishAndRedirect}

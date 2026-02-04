@@ -5,7 +5,7 @@ export const COURSES: Course[] = [
   {
     id: 'seg-trabalho',
     title: 'Técnico em Segurança do Trabalho',
-    duration: 'Conclusão em 12 meses',
+    duration: 'Conclusão em 6 meses',
     category: 'Segurança',
     description: 'Proteja vidas e garanta a conformidade legal nas empresas. Curso com foco em NRs atualizadas.',
     icon: '🦺'
@@ -13,7 +13,7 @@ export const COURSES: Course[] = [
   {
     id: 'mecanica',
     title: 'Técnico em Mecânica',
-    duration: 'Conclusão em 18 meses',
+    duration: 'Conclusão em 6 meses',
     category: 'Tecnologia',
     description: 'Domine processos industriais, manutenção e projetos. Alta demanda no setor industrial.',
     icon: '⚙️'
@@ -21,7 +21,7 @@ export const COURSES: Course[] = [
   {
     id: 'farmacia',
     title: 'Técnico em Farmácia',
-    duration: 'Conclusão em 18 meses',
+    duration: 'Conclusão em 6 meses',
     category: 'Saúde',
     description: 'Atue em drogarias, farmácias de manipulação e hospitais. Mercado em constante crescimento.',
     icon: '💊'
