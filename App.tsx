@@ -15,7 +15,7 @@ const App: React.FC = () => {
   const LOGO_URL = "https://raw.githubusercontent.com/performancedigital/bias-centro-educacional/5bab85aaa608e7540bdbdc545f2503dffe5e63ea/logo-bias.png";
 
   return (
-    <div className="min-h-screen bg-white selection:bg-bias-yellow selection:text-bias-blue overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-white selection:bg-bias-yellow selection:text-bias-blue overflow-x-hidden font-sans text-slate-900">
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 bg-white border-b border-slate-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
@@ -55,16 +55,27 @@ const App: React.FC = () => {
       {/* Hero Section */}
       <header className="pt-32 pb-20 md:pt-48 md:pb-32 px-4 bg-white">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center bg-bias-yellow text-bias-blue px-5 py-2 rounded-full text-[11px] font-black mb-8 uppercase tracking-widest shadow-sm">
+          <div className="inline-flex items-center bg-slate-50 text-bias-blue border border-slate-200 px-5 py-2 rounded-full text-[11px] font-black mb-10 uppercase tracking-widest shadow-sm">
             🚀 MATRÍCULAS ABERTAS • INÍCIO IMEDIATO
           </div>
-          <h1 className="text-4xl md:text-6xl font-black text-bias-blue leading-[1.1] mb-8 tracking-tighter uppercase">
-            Formação 100% Online reconhecida pelo MEC<br />e registrada no SISTEC.<br />
-            <span className="text-4xl md:text-6xl block mt-6 text-bias-yellow">Conquiste seu espaço por apenas {PRICE_INSTALLMENT}</span>
+          
+          <h1 className="text-4xl md:text-6xl font-black text-bias-blue leading-[1.1] mb-12 tracking-tighter uppercase">
+            Formação 100% Online reconhecida pelo MEC<br />e registrada no SISTEC.
           </h1>
-          <button onClick={() => handleWhatsApp()} className="bg-bias-blue text-white px-16 py-5 rounded-2xl font-black text-xl md:text-2xl shadow-2xl hover:bg-bias-navy transition-all uppercase tracking-tight">
-            COMEÇAR AGORA
-          </button>
+
+          <div className="inline-block mb-12 p-1 bg-slate-50 rounded-[2rem] shadow-inner">
+            <div className="px-10 py-6 bg-white border border-slate-200/60 rounded-[1.8rem] shadow-sm">
+              <p className="text-lg md:text-2xl font-bold text-slate-600 uppercase tracking-tight">
+                Conquiste seu espaço por apenas <span className="text-bias-blue font-black underline decoration-bias-yellow decoration-4 underline-offset-8">{PRICE_INSTALLMENT}</span>
+              </p>
+            </div>
+          </div>
+
+          <div className="block">
+            <button onClick={() => handleWhatsApp()} className="bg-bias-blue text-white px-16 py-5 rounded-2xl font-black text-xl md:text-2xl shadow-2xl hover:bg-bias-navy hover:scale-105 active:scale-95 transition-all uppercase tracking-tight">
+              COMEÇAR AGORA
+            </button>
+          </div>
         </div>
       </header>
 

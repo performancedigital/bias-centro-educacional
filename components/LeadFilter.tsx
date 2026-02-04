@@ -31,8 +31,8 @@ const LeadFilter: React.FC = () => {
                 <p className="font-black text-bias-blue text-2xl uppercase tracking-tighter mb-1">100% ONLINE</p>
                 <p className="text-sm font-bold text-slate-400 uppercase tracking-wide">QUERO CURSAR AS MATÉRIAS DO ZERO</p>
               </button>
-              <button onClick={() => nextStep('objetivo', 'POR COMPETÊNCIA')} className="p-10 border-2 border-slate-100 rounded-[2.5rem] hover:border-bias-blue hover:bg-slate-50 transition-all text-left group">
-                <p className="font-black text-bias-blue text-2xl uppercase tracking-tighter mb-1">POR COMPETÊNCIA</p>
+              <button onClick={() => nextStep('objetivo', '100% ONLINE POR COMPETÊNCIA')} className="p-10 border-2 border-slate-100 rounded-[2.5rem] hover:border-bias-blue hover:bg-slate-50 transition-all text-left group">
+                <p className="font-black text-bias-blue text-2xl uppercase tracking-tighter mb-1">100% ONLINE POR COMPETÊNCIA</p>
                 <p className="text-sm font-bold text-slate-400 uppercase tracking-wide">TENHO +2 ANOS DE EXPERIÊNCIA NA ÁREA</p>
               </button>
             </div>
