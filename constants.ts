@@ -31,28 +31,29 @@ export const COURSES: Course[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
-    name: 'Carlos Alberto',
-    role: 'ALUNO CERTIFICADO',
-    content: 'A BIAS facilitou muito minha formação. O conteúdo online é direto ao ponto e o suporte é nota 10!',
-    avatar: 'https://i.pravatar.cc/150?u=carlos'
+    name: 'William De Jesus',
+    role: 'ALUNO FORMADO',
+    content: 'Concluí o meu curso de habilitação técnica em meio ambiente pelo Bias Centro educacional, foi uma ótima experiência, pessoal sempre atencioso. Quando vi meu nome e diploma no Sistec fiquei até emocionado❤️',
+    avatar: 'https://ui-avatars.com/api/?name=William+De+Jesus&background=0047AB&color=fff'
   },
   {
     id: 2,
-    name: 'Fernanda Lima',
-    role: 'ALUNA CERTIFICADA',
-    content: 'Consegui meu emprego na farmácia do bairro antes mesmo de terminar o curso. O diploma é muito respeitado.',
-    avatar: 'https://i.pravatar.cc/150?u=fernanda'
+    name: 'Lucas O Barbosa',
+    role: 'ALUNO SATISFEITO',
+    content: 'Gostaria de registrar meu agradecimento e elogio ao excelente atendimento prestado pela atendente Ana Carolina Oliveira. Desde o primeiro contato, ela demonstrou profissionalismo, simpatia e total disposição em ajudar.',
+    avatar: 'https://ui-avatars.com/api/?name=Lucas+O+Barbosa&background=FFB800&color=000'
   },
   {
     id: 3,
-    name: 'João Pedro',
-    role: 'ALUNO CERTIFICADO',
-    content: 'Processo rápido e transparente. Consegui meu registro no conselho em tempo recorde!',
-    avatar: 'https://i.pravatar.cc/150?u=joao'
+    name: 'Bruno Correa',
+    role: 'LOCAL GUIDE',
+    content: 'A atendente Ana super solicita, tinha minhas dúvidas por ser EAD e de outro estado, mas foi bem claro me mandando todos os dados da empresa, as normas e políticas da empresa! Parabéns e feedback positivo pra Ana.',
+    avatar: 'https://ui-avatars.com/api/?name=Bruno+Correa&background=002D6B&color=fff'
   }
 ];
 
 export const WHATSAPP_NUMBER = '553197690284'; 
 export const INSTAGRAM_URL = 'https://instagram.com/biascentroeducacional';
+export const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=bias+centro+educacional#lrd=0xa5542172c22513:0x36677310c96dc912,1,,,,';
 export const PRICE_INSTALLMENT = '12x de R$ 61,66 NO CARTÃO';
 export const FACEBOOK_PIXEL_ID = '876824591991075';

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { COURSES, TESTIMONIALS, WHATSAPP_NUMBER, INSTAGRAM_URL, PRICE_INSTALLMENT } from './constants';
+import { COURSES, TESTIMONIALS, WHATSAPP_NUMBER, INSTAGRAM_URL, PRICE_INSTALLMENT, GOOGLE_REVIEWS_URL } from './constants';
 import LeadFilter from './components/LeadFilter';
 
 const App: React.FC = () => {
@@ -197,15 +197,27 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section com Link para Google Reviews */}
       <section className="py-40 bg-white relative z-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-24 reveal">
+          <div className="text-center mb-16 reveal">
+            <div className="inline-flex items-center gap-4 bg-slate-50 px-6 py-3 rounded-2xl border border-slate-100 mb-8">
+              <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" className="h-6" />
+              <div className="h-6 w-px bg-slate-200"></div>
+              <div className="flex items-center gap-1 text-bias-yellow">
+                <span className="text-lg font-black text-slate-800 mr-1">4.9</span>
+                <span className="text-xl">★</span>
+                <span className="text-xl">★</span>
+                <span className="text-xl">★</span>
+                <span className="text-xl">★</span>
+                <span className="text-xl">★</span>
+              </div>
+            </div>
             <h2 className="text-4xl md:text-5xl font-black text-bias-blue mb-4 uppercase tracking-tighter">RESULTADOS QUE FALAM</h2>
-            <p className="text-slate-400 font-black uppercase tracking-[0.2em] text-[10px]">HISTÓRIAS REAIS DE QUEM MUDOU DE VIDA</p>
+            <p className="text-slate-400 font-black uppercase tracking-[0.2em] text-[10px]">HISTÓRIAS REAIS EXTRAÍDAS DO NOSSO PERFIL NO GOOGLE</p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid lg:grid-cols-3 gap-12 mb-20">
             {TESTIMONIALS.map(t => (
               <div key={t.id} className="reveal bg-slate-50/70 p-14 rounded-[4rem] border border-slate-100 hover:bg-white hover:shadow-[0_40px_100px_rgba(0,71,171,0.08)] transition-all duration-700 group">
                 <div className="flex gap-1 mb-8">
@@ -224,6 +236,19 @@ const App: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="text-center reveal">
+            <a 
+              href={GOOGLE_REVIEWS_URL} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-4 bg-white border-2 border-slate-200 px-12 py-6 rounded-[2rem] font-black text-slate-700 hover:border-bias-blue hover:text-bias-blue transition-all uppercase tracking-widest text-sm shadow-sm group"
+            >
+              <img src="https://www.gstatic.com/images/branding/product/2x/googleg_48dp.png" alt="Google G" className="w-6 h-6" />
+              VER TODAS AS AVALIAÇÕES NO GOOGLE
+              <span className="group-hover:translate-x-2 transition-transform">→</span>
+            </a>
           </div>
         </div>
       </section>
@@ -267,6 +292,7 @@ const App: React.FC = () => {
                 <li><a href="#cursos" className="hover:text-white hover:pl-2 transition-all block">Formações Técnicas</a></li>
                 <li><a href="#competencia" className="hover:text-white hover:pl-2 transition-all block">Experiência Profissional</a></li>
                 <li><a href={INSTAGRAM_URL} target="_blank" className="hover:text-white hover:pl-2 transition-all block">Instagram Oficial</a></li>
+                <li><a href={GOOGLE_REVIEWS_URL} target="_blank" className="hover:text-white hover:pl-2 transition-all block">Google Reviews</a></li>
               </ul>
             </div>
             
