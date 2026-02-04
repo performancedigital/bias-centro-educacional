@@ -7,7 +7,7 @@ export const COURSES: Course[] = [
     title: 'Técnico em Segurança do Trabalho',
     duration: 'CONCLUSÃO EM 6 MESES',
     category: 'Segurança',
-    description: 'Proteja vidas e garanta a conformidade legal nas empresas. Curso com foco em NRs atualizadas.',
+    description: 'Torne-se um especialista em prevenção de acidentes e doenças ocupacionais. Você aprenderá a elaborar planos de segurança, aplicar Normas Regulamentadoras (NRs) e garantir a integridade física dos colaboradores em ambientes industriais e corporativos. Essencial para empresas de todos os portes.',
     icon: '🦺'
   },
   {
@@ -15,7 +15,7 @@ export const COURSES: Course[] = [
     title: 'Técnico em Mecânica',
     duration: 'CONCLUSÃO EM 6 MESES',
     category: 'Tecnologia',
-    description: 'Domine processos industriais, maintenance e projetos. Alta demanda no setor industrial.',
+    description: 'Domine a manutenção de máquinas, sistemas de automação e controle de qualidade industrial. O curso abrange desde o desenho técnico e metrologia até a gestão de processos produtivos complexos. Prepare-se para atuar no coração da indústria com uma formação técnica robusta e prática.',
     icon: '⚙️'
   },
   {
@@ -23,7 +23,7 @@ export const COURSES: Course[] = [
     title: 'Técnico em Farmácia',
     duration: 'CONCLUSÃO EM 6 MESES',
     category: 'Saúde',
-    description: 'Atue em drogarias, farmácias de manipulação e hospitais. Mercado em constante crescimento.',
+    description: 'Capacite-se para atuar na manipulação, controle de estoque e assistência na dispensação de medicamentos. Aprenda sobre ética farmacêutica, farmacologia básica e atendimento ao cliente em drogarias, hospitais e unidades de saúde. Um mercado seguro com alta taxa de empregabilidade.',
     icon: '💊'
   }
 ];

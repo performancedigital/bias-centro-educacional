@@ -120,7 +120,7 @@ const App: React.FC = () => {
         </svg>
       </div>
 
-      {/* Formações Section */}
+      {/* Formações Section - Centralizada */}
       <section id="cursos" className="py-32 bg-slate-50 relative z-10">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-24 reveal">
@@ -129,17 +129,20 @@ const App: React.FC = () => {
             <p className="text-slate-400 font-black uppercase tracking-[0.4em] text-[10px]">CONTEÚDO 100% ONLINE E ATUALIZADO</p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto justify-center">
             {COURSES.map(course => (
-              <div key={course.id} className="reveal glass-card rounded-[3.5rem] p-12 border border-slate-200/50 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:-translate-y-4 transition-all duration-500 text-center md:text-left flex flex-col group hover-shine">
+              <div key={course.id} className="reveal glass-card rounded-[3.5rem] p-10 lg:p-14 border border-slate-200/50 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:-translate-y-4 transition-all duration-500 text-center md:text-left flex flex-col group hover-shine">
                 <div className="text-7xl mb-12 flex justify-center md:justify-start group-hover:scale-125 transition-transform duration-700 drop-shadow-lg">{course.icon}</div>
-                <h3 className="text-2xl md:text-3xl font-black text-bias-blue mb-6 leading-none uppercase tracking-tighter">{course.title}</h3>
-                <p className="text-slate-500 text-lg mb-12 font-medium leading-relaxed">{course.description}</p>
+                <h3 className="text-2xl md:text-3xl font-black text-bias-blue mb-6 leading-tight uppercase tracking-tighter">{course.title}</h3>
+                <p className="text-slate-500 text-base lg:text-lg mb-12 font-medium leading-relaxed">{course.description}</p>
                 
                 <div className="mt-auto pt-10 border-t border-slate-100/80">
-                  <div className="flex items-center justify-between mb-8">
+                  <div className="flex flex-col gap-4 mb-8">
                     <span className="text-[11px] font-black text-bias-blue tracking-[0.2em] uppercase">{course.duration}</span>
-                    <span className="bg-bias-blue/10 text-bias-blue px-3 py-1 rounded-lg text-[9px] font-black uppercase">RECONHECIDO</span>
+                    <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                      <span className="bg-bias-blue/10 text-bias-blue px-3 py-1 rounded-lg text-[9px] font-black uppercase">RECONHECIDO MEC</span>
+                      <span className="bg-bias-yellow/10 text-bias-gold px-3 py-1 rounded-lg text-[9px] font-black uppercase">100% ONLINE</span>
+                    </div>
                   </div>
                   <button onClick={() => handleWhatsApp(`Olá! Gostaria de detalhes sobre o curso ${course.title}`)} className="w-full bg-bias-blue text-white py-5 rounded-[1.5rem] font-black hover:bg-bias-navy shadow-lg transition-all uppercase text-[11px] tracking-[0.2em] active:scale-95">
                     VER GRADE CURRICULAR →
@@ -177,12 +180,16 @@ const App: React.FC = () => {
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="max-w-3xl space-y-10 text-center lg:text-left">
-            <div className="inline-block bg-bias-yellow text-bias-blue px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest mb-4">LEI FEDERAL 9.394/96 ART. 41</div>
+            <div className="inline-flex items-center gap-3 bg-bias-yellow text-bias-blue px-4 py-2 rounded-lg text-xs font-black uppercase tracking-widest mb-4">
+              <span>LEI FEDERAL 9.394/96 ART. 41</span>
+              <span className="w-1 h-1 bg-bias-blue rounded-full"></span>
+              <span>100% ONLINE</span>
+            </div>
             <h2 className="text-5xl md:text-7xl font-black leading-[1] tracking-tighter">
               Você já trabalha na área?<br />
-              <span className="text-bias-yellow">O Diploma é seu por direito.</span>
+              <span className="text-bias-yellow uppercase">O Diploma é seu por direito.</span>
             </h2>
-            <p className="text-xl text-white/80 font-medium max-w-xl mx-auto lg:mx-0">Use sua experiência comprovada para obter o diploma técnico em tempo recorde e com validade nacional.</p>
+            <p className="text-xl text-white/80 font-medium max-w-xl mx-auto lg:mx-0">Use sua experiência comprovada para obter o diploma técnico em tempo recorde e com validade nacional, tudo de forma digital e segura.</p>
             <button onClick={() => handleWhatsApp("Olá! Quero saber sobre o diploma por experiência.")} className="bg-white text-bias-blue px-14 py-7 rounded-[2rem] font-black text-xl hover:bg-bias-yellow transition-all shadow-[0_20px_60px_rgba(0,0,0,0.3)] uppercase tracking-tight hover:scale-105 active:scale-95 animate-pulse-soft">
               AVALIAR MINHA EXPERIÊNCIA AGORA
             </button>
@@ -250,7 +257,7 @@ const App: React.FC = () => {
                 <span className="text-4xl font-black tracking-tighter uppercase">BIAS</span>
               </div>
               <p className="text-slate-500 text-sm font-medium leading-relaxed max-w-xs mx-auto md:mx-0 uppercase tracking-wide">
-                Capacitando profissionais com excelência técnica e reconhecimento nacional.
+                Capacitando profissionais com excelência técnica e reconhecimento nacional desde 2022.
               </p>
             </div>
             
@@ -274,7 +281,7 @@ const App: React.FC = () => {
             
             <div className="space-y-10 reveal">
               <h4 className="font-black text-xs mb-10 uppercase tracking-[0.4em] text-bias-yellow">FALE CONOSCO</h4>
-              <button onClick={() => handleWhatsApp()} className="w-full bg-bias-blue text-white py-6 rounded-[1.5rem] font-black hover:bg-bias-navy hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition-all text-xs uppercase tracking-[0.2em] active:scale-95">
+              <button onClick={() => handleWhatsApp()} className="w-full bg-bias-blue text-white py-6 rounded-[1.5rem] font-black hover:bg-bias-navy hover:shadow-[0_10px_30px_rgba(0,71,171,0.3)] transition-all text-xs uppercase tracking-[0.2em] active:scale-95">
                 INICIAR MATRÍCULA
               </button>
             </div>
