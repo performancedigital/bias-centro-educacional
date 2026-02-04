@@ -4,11 +4,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BIAS | Cursos Técnicos Online - Início Imediato</title>
+    <title>BIAS | Cursos Técnicos Reconhecidos MEC e SISTEC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bias: {
+                blue: '#0047AB',
+                navy: '#002D6B',
+                yellow: '#FFB800',
+                gold: '#E6A600',
+              }
+            },
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
     <style>
       body { 
         font-family: 'Plus Jakarta Sans', sans-serif; 
@@ -39,12 +58,8 @@
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '876824591991075');
-      
-      // Implementação de ID único para deduplicação no PageView
-      var eventID = 'evt_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-      fbq('track', 'PageView', {}, {eventID: eventID});
+      fbq('track', 'PageView');
     </script>
-    <!-- End Meta Pixel Code -->
 
     <script type="importmap">
 {
@@ -52,21 +67,19 @@
     "react": "https://esm.sh/react@19.0.0",
     "react-dom": "https://esm.sh/react-dom@19.0.0",
     "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
   }
 }
 </script>
   </head>
-  <body>
-    <!-- Meta Pixel Code (Noscript part) -->
+  <body class="bg-white text-slate-900 antialiased selection:bg-bias-yellow selection:text-bias-blue overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
     <noscript>
       <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=876824591991075&ev=PageView&noscript=1"
       />
     </noscript>
-
-    <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
   </body>
 </html>

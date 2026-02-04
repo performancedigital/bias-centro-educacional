@@ -4,127 +4,121 @@ import { WHATSAPP_NUMBER, PRICE_INSTALLMENT } from '../constants';
 
 const LeadFilter: React.FC = () => {
   const [step, setStep] = useState(1);
-  const [answers, setAnswers] = useState({
-    format: '',
-    experience: '',
-    motivation: ''
-  });
-
-  const generateEventID = () => {
-    return 'evt_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-  };
+  const [answers, setAnswers] = useState<Record<string, string>>({});
 
   const nextStep = (field: string, value: string) => {
     setAnswers(prev => ({ ...prev, [field]: value }));
     setStep(prev => prev + 1);
   };
 
-  const finishAndRedirect = () => {
+  const finish = () => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
-      const eventID = generateEventID();
-      (window as any).fbq('track', 'Lead', {
-        content_name: 'Filtro de Qualificação Completo',
-        content_category: answers.format,
-        value: 0.00,
-        currency: 'BRL'
-      }, { eventID: eventID });
+      (window as any).fbq('track', 'Lead', { content_name: 'Simulador Matrícula Online' });
     }
-
-    const text = `Olá! Fiz o teste no site da BIAS.\n\nFormato: ${answers.format}\nExperiência: ${answers.experience}\nMotivo: ${answers.motivation}\n\nQuero garantir a oferta de ${PRICE_INSTALLMENT}!`;
+    const text = `Olá! Finalizei o diagnóstico no site.\n\nPreferência: ${answers.objetivo}\nDisponibilidade: ${answers.disponibilidade}\nObjetivo: ${answers.meta}\n\nQuero garantir minha vaga por apenas 12x de R$ 61,66 NO CARTÃO!`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
-  return (
-    <section id="filtro" className="py-24 bg-slate-50">
-      <div className="max-w-3xl mx-auto px-4">
-        <div className="bg-white rounded-[4rem] shadow-2xl overflow-hidden border border-slate-100 transition-all duration-500">
-          <div className="bg-bias-blue p-12 text-center text-white relative">
-            <h2 className="text-3xl font-black mb-2 tracking-tight uppercase">Plano de Carreira 2026</h2>
-            <p className="opacity-80 font-bold text-sm tracking-widest uppercase">Consultoria Gratuita via WhatsApp</p>
+  const renderStep = () => {
+    switch(step) {
+      case 1:
+        return (
+          <div className="animate-fadeIn">
+            <p className="text-bias-blue font-bold text-center mb-6 text-[10px] tracking-widest uppercase">PASSO 01 DE 03</p>
+            <h3 className="text-3xl md:text-4xl font-black mb-12 text-slate-800 text-center leading-tight tracking-tighter">Como você quer obter seu diploma?</h3>
+            <div className="grid grid-cols-1 gap-5">
+              <button onClick={() => nextStep('objetivo', '100% ONLINE')} className="p-10 border-2 border-slate-100 rounded-[2.5rem] hover:border-bias-blue hover:bg-slate-50 transition-all text-left group">
+                <p className="font-black text-bias-blue text-2xl uppercase tracking-tighter mb-1">100% ONLINE</p>
+                <p className="text-sm font-bold text-slate-400 uppercase tracking-wide">QUERO CURSAR AS MATÉRIAS DO ZERO</p>
+              </button>
+              <button onClick={() => nextStep('objetivo', 'POR COMPETÊNCIA')} className="p-10 border-2 border-slate-100 rounded-[2.5rem] hover:border-bias-blue hover:bg-slate-50 transition-all text-left group">
+                <p className="font-black text-bias-blue text-2xl uppercase tracking-tighter mb-1">POR COMPETÊNCIA</p>
+                <p className="text-sm font-bold text-slate-400 uppercase tracking-wide">TENHO +2 ANOS DE EXPERIÊNCIA NA ÁREA</p>
+              </button>
+            </div>
           </div>
-          
-          <div className="p-10 md:p-16 min-h-[480px] flex flex-col justify-center">
-            {step === 1 && (
-              <div className="animate-fadeIn">
-                <p className="text-bias-blue font-black text-center mb-4 text-xs tracking-widest uppercase">Passo 01 de 03</p>
-                <h3 className="text-3xl font-black mb-10 text-gray-800 text-center leading-tight">Como você quer obter seu diploma?</h3>
-                <div className="grid grid-cols-1 gap-4">
-                  {[
-                    { val: '100% Online', d: 'Quero cursar as matérias do zero' },
-                    { val: 'Por Competência', d: 'Tenho +2 anos de experiência na área' }
-                  ].map(opt => (
-                    <button 
-                      key={opt.val}
-                      onClick={() => nextStep('format', opt.val)}
-                      className="p-8 border-2 border-slate-100 rounded-[2rem] hover:border-bias-yellow hover:bg-yellow-50 transition-all text-left group"
-                    >
-                      <p className="font-black text-bias-blue text-xl uppercase tracking-tighter">{opt.val}</p>
-                      <p className="text-sm font-bold text-slate-400 uppercase">{opt.d}</p>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {step === 2 && (
-              <div className="animate-fadeIn">
-                <p className="text-bias-blue font-black text-center mb-4 text-xs tracking-widest uppercase">Passo 02 de 03</p>
-                <h3 className="text-3xl font-black mb-10 text-gray-800 text-center leading-tight">Sua disponibilidade atual:</h3>
-                <div className="grid grid-cols-1 gap-4">
-                  {[
-                    'Trabalho o dia todo',
-                    'Tenho tempo livre para estudar',
-                    'Preciso do diploma com urgência máxima'
-                  ].map(opt => (
-                    <button 
-                      key={opt}
-                      onClick={() => nextStep('experience', opt)}
-                      className="p-6 border-2 border-slate-100 rounded-2xl hover:border-bias-yellow hover:bg-yellow-50 transition-all text-center font-black text-slate-700 uppercase tracking-tighter"
-                    >
-                      {opt}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {step === 3 && (
-              <div className="animate-fadeIn">
-                <p className="text-bias-blue font-black text-center mb-4 text-xs tracking-widest uppercase">Passo 03 de 03</p>
-                <h3 className="text-3xl font-black mb-10 text-gray-800 text-center leading-tight">Principal objetivo:</h3>
-                <div className="grid grid-cols-1 gap-4">
-                  {[
-                    'Aumento Salarial',
-                    'Mudar de Profissão',
-                    'Registro em Conselho (CREA/CFT)',
-                    'Prestar Concurso Público'
-                  ].map(opt => (
-                    <button 
-                      key={opt}
-                      onClick={() => nextStep('motivation', opt)}
-                      className="p-6 border-2 border-slate-100 rounded-2xl hover:border-bias-yellow hover:bg-yellow-50 transition-all text-center font-black text-slate-700 uppercase tracking-tighter"
-                    >
-                      {opt}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {step === 4 && (
-              <div className="text-center animate-fadeIn">
-                <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white text-4xl mx-auto mb-8 shadow-xl">✓</div>
-                <h3 className="text-3xl font-black mb-2 text-gray-800 leading-tight">Perfil Qualificado!</h3>
-                <p className="text-bias-blue font-black text-lg mb-6 uppercase tracking-tight">Você está qualificado para uma oportunidade de 12x R$61,67</p>
-                <p className="text-gray-500 font-medium mb-10">Tudo pronto para iniciarmos seu planejamento de carreira.</p>
+        );
+      case 2:
+        return (
+          <div className="animate-fadeIn">
+            <p className="text-bias-blue font-bold text-center mb-6 text-[10px] tracking-widest uppercase">PASSO 02 DE 03</p>
+            <h3 className="text-3xl md:text-4xl font-black mb-12 text-slate-800 text-center leading-tight tracking-tighter">Sua disponibilidade atual:</h3>
+            <div className="grid grid-cols-1 gap-4">
+              {[
+                'TRABALHO O DIA TODO',
+                'TENHO TEMPO LIVRE PARA ESTUDAR',
+                'PRECISO DO DIPLOMA COM URGÊNCIA MÁXIMA'
+              ].map(opt => (
                 <button 
-                  onClick={finishAndRedirect}
-                  className="w-full bg-bias-blue text-white py-6 rounded-2xl font-black text-xl shadow-xl hover:scale-105 transition-all uppercase"
+                  key={opt}
+                  onClick={() => nextStep('disponibilidade', opt)} 
+                  className="p-8 border-2 border-slate-100 rounded-3xl hover:border-bias-blue transition-all font-black text-slate-700 text-lg uppercase tracking-tight text-center"
                 >
-                  Finalizar no WhatsApp
+                  {opt}
                 </button>
-              </div>
-            )}
+              ))}
+            </div>
+          </div>
+        );
+      case 3:
+        return (
+          <div className="animate-fadeIn">
+            <p className="text-bias-blue font-bold text-center mb-6 text-[10px] tracking-widest uppercase">PASSO 03 DE 03</p>
+            <h3 className="text-3xl md:text-4xl font-black mb-12 text-slate-800 text-center leading-tight tracking-tighter">Principal objetivo:</h3>
+            <div className="grid grid-cols-1 gap-4">
+              {[
+                'AUMENTO SALARIAL',
+                'MUDAR DE PROFISSÃO',
+                'REGISTRO EM CONSELHO (CREA/CFT)',
+                'PRESTAR CONCURSO PÚBLICO'
+              ].map(opt => (
+                <button 
+                  key={opt}
+                  onClick={() => nextStep('meta', opt)} 
+                  className="p-8 border-2 border-slate-100 rounded-3xl hover:border-bias-blue transition-all font-black text-slate-700 text-lg uppercase tracking-tight text-center"
+                >
+                  {opt}
+                </button>
+              ))}
+            </div>
+          </div>
+        );
+      case 4:
+        return (
+          <div className="animate-fadeIn text-center">
+            <div className="w-24 h-24 bg-[#22C55E] text-white rounded-full flex items-center justify-center mx-auto mb-10 shadow-lg">
+              <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h3 className="text-4xl font-black mb-3 text-slate-800 tracking-tighter">Perfil Qualificado!</h3>
+            <p className="text-bias-blue font-black mb-6 uppercase text-base tracking-tight leading-relaxed max-w-sm mx-auto">
+              VOCÊ ESTÁ QUALIFICADO PARA UMA OPORTUNIDADE DE 12X R$61,66 NO CARTÃO
+            </p>
+            <p className="text-slate-400 font-medium mb-12 text-sm">
+              Tudo pronto para iniciarmos seu planejamento de carreira.
+            </p>
+            <button 
+              onClick={finish}
+              className="w-full py-7 bg-bias-blue text-white rounded-[1.5rem] font-black text-xl shadow-2xl hover:bg-bias-navy transition-all uppercase tracking-tight"
+            >
+              FINALIZAR NO WHATSAPP
+            </button>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <section id="filtro" className="py-28 bg-slate-50">
+      <div className="max-w-3xl mx-auto px-4">
+        <div className="bg-white rounded-[4rem] shadow-2xl overflow-hidden border border-slate-100">
+          <div className="bg-bias-blue p-10 text-center text-white">
+            <h2 className="text-3xl font-black mb-2 tracking-tight uppercase">PLANO DE CARREIRA 2026</h2>
+            <p className="opacity-80 font-bold text-xs tracking-widest uppercase">CONSULTORIA GRATUITA VIA WHATSAPP</p>
+          </div>
+          <div className="p-10 md:p-20 min-h-[550px] flex flex-col justify-center">
+            {renderStep()}
           </div>
         </div>
       </div>
