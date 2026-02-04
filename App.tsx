@@ -13,6 +13,7 @@ const App: React.FC = () => {
   };
 
   const LOGO_URL = "https://raw.githubusercontent.com/performancedigital/bias-centro-educacional/5bab85aaa608e7540bdbdc545f2503dffe5e63ea/logo-bias.png";
+  const INDUSTRIAL_IMG = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2000";
 
   return (
     <div className="min-h-screen bg-white selection:bg-bias-yellow selection:text-bias-blue overflow-x-hidden font-sans text-slate-900">
@@ -110,7 +111,18 @@ const App: React.FC = () => {
       <LeadFilter />
 
       {/* Diploma por Experiência Section */}
-      <section id="competencia" className="py-32 bg-bias-blue text-white overflow-hidden relative">
+      <section id="competencia" className="py-32 relative text-white overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={INDUSTRIAL_IMG} 
+            alt="Profissional com EPI em ambiente industrial" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-bias-blue/85 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-bias-blue via-bias-blue/90 to-transparent"></div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8 text-center lg:text-left">
