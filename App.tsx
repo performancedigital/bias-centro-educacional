@@ -85,7 +85,7 @@ const App: React.FC = () => {
             🚀 MATRÍCULAS ABERTAS 2026
           </div>
           
-          <h1 className="text-[2.5rem] md:text-8xl font-black text-gradient leading-[1.05] md:leading-[0.95] mb-4 md:mb-6 tracking-tighter uppercase">
+          <h1 className="text-[2.25rem] md:text-7xl font-black text-gradient leading-[1.05] md:leading-[0.95] mb-4 md:mb-6 tracking-tighter uppercase">
             Sua formação técnica<br className="hidden md:block" /> em apenas 6 meses.
           </h1>
           
