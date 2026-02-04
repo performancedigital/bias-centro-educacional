@@ -16,7 +16,7 @@ const LeadFilter: React.FC = () => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead', { content_name: 'Simulador Matrícula Online' });
     }
-    const text = `Olá! Finalizei o diagnóstico no site.\n\nPreferência: ${answers.objetivo}\nDisponibilidade: ${answers.disponibilidade}\nObjetivo: ${answers.meta}\n\nQuero garantir minha vaga por apenas 12x de R$ 61,66 NO CARTÃO!`;
+    const text = `Olá! Finalizei o diagnóstico no site.\n\nPreferência: ${answers.objetivo}\nDisponibilidade: ${answers.disponibilidade}\nObjetivo: ${answers.meta}\n\nQuero garantir minha vaga e aproveitar a oferta especial!`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
