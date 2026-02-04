@@ -174,7 +174,7 @@ const App: React.FC = () => {
               <p className="text-slate-400 text-sm font-medium">Educação técnica autorizada pelo MEC com foco em empregabilidade real.</p>
               <div className="text-slate-500 text-[10px] font-bold uppercase tracking-widest space-y-1">
                 <p>BIAS CENTRO EDUCACIONAL LTDA</p>
-                <p>CNPJ: 34.123.456/0001-78</p>
+                <p>CNPJ: 47.948.018/0001-83</p>
               </div>
             </div>
 
@@ -191,9 +191,8 @@ const App: React.FC = () => {
             <div className="space-y-4">
               <h4 className="font-black text-lg mb-6 uppercase tracking-tighter text-bias-yellow">Localização</h4>
               <p className="text-slate-400 text-sm font-medium leading-relaxed">
-                Rua São Paulo, 409 - Centro<br/>
-                Belo Horizonte - MG<br/>
-                CEP: 30170-130
+                Coronel Silvino Pereira, 295 - Centro<br/>
+                Coronel Fabriciano - MG
               </p>
             </div>
 
