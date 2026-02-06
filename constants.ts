@@ -52,7 +52,7 @@ export const TESTIMONIALS: Testimonial[] = [
   }
 ];
 
-export const WHATSAPP_NUMBER = '553197690284'; 
+export const WHATSAPP_NUMBER = '+55 31 99112-1377'; 
 export const INSTAGRAM_URL = 'https://instagram.com/biascentroeducacional';
 export const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=bias+centro+educacional#lrd=0xa5542172c22513:0x36677310c96dc912,1,,,,';
 export const PRICE_INSTALLMENT = '12x de R$ 61,66 NO CARTÃO';

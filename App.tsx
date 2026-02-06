@@ -30,7 +30,8 @@ const App: React.FC = () => {
   }, []);
 
   const handleWhatsApp = (msg: string = `Olá! Vi no site e gostaria de saber mais informações sobre os cursos.`) => {
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    const cleanNumber = WHATSAPP_NUMBER.replace(/\D/g, '');
+    window.open(`https://wa.me/${cleanNumber}?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   const scrollToQuiz = () => {
