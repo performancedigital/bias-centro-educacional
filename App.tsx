@@ -156,8 +156,12 @@ const App: React.FC = () => {
                       <span className="bg-bias-yellow/10 text-bias-gold px-2 md:px-3 py-1 rounded-lg text-[8px] md:text-[9px] font-black uppercase">100% ONLINE</span>
                     </div>
                   </div>
-                  <button onClick={() => handleWhatsApp(`Olá! Gostaria de detalhes sobre o curso ${course.title}`)} className="w-full bg-bias-blue text-white py-4 md:py-5 rounded-[1.2rem] md:rounded-[1.5rem] font-black hover:bg-bias-navy shadow-lg transition-all uppercase text-[10px] md:text-[11px] tracking-[0.2em] active:scale-95">
-                    GRADE CURRICULAR →
+                  {/* Botão de curso transformado para falar com consultor no WhatsApp */}
+                  <button 
+                    onClick={() => handleWhatsApp(`Olá! Gostaria de detalhes sobre o curso ${course.title}`)} 
+                    className="w-full bg-bias-blue text-white py-4 md:py-5 rounded-[1.2rem] md:rounded-[1.5rem] font-black hover:bg-bias-navy shadow-lg transition-all uppercase text-[10px] md:text-[11px] tracking-[0.2em] active:scale-95"
+                  >
+                    FALAR COM UM CONSULTOR
                   </button>
                 </div>
               </div>
