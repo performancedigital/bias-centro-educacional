@@ -31,7 +31,8 @@ const App: React.FC = () => {
 
   const handleWhatsApp = (msg: string = `Olá! Vi no site e gostaria de saber mais informações sobre os cursos.`) => {
     const cleanNumber = WHATSAPP_NUMBER.replace(/\D/g, '');
-    window.open(`https://wa.me/${cleanNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+    const url = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const scrollToQuiz = () => {
@@ -156,7 +157,7 @@ const App: React.FC = () => {
                       <span className="bg-bias-yellow/10 text-bias-gold px-2 md:px-3 py-1 rounded-lg text-[8px] md:text-[9px] font-black uppercase">100% ONLINE</span>
                     </div>
                   </div>
-                  {/* Botão de curso atualizado para usar a mesma mensagem padrão do WhatsApp */}
+                  {/* LINHA 128: Botão com onClick direto para o WhatsApp */}
                   <button 
                     onClick={() => handleWhatsApp()} 
                     className="w-full bg-bias-blue text-white py-4 md:py-5 rounded-[1.2rem] md:rounded-[1.5rem] font-black hover:bg-bias-navy shadow-lg transition-all uppercase text-[10px] md:text-[11px] tracking-[0.2em] active:scale-95 hover-shine"
