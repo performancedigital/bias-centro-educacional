@@ -156,7 +156,7 @@ const App: React.FC = () => {
                       <span className="bg-bias-yellow/10 text-bias-gold px-2 md:px-3 py-1 rounded-lg text-[8px] md:text-[9px] font-black uppercase">100% ONLINE</span>
                     </div>
                   </div>
-                  {/* Botão usual de alta conversão redirecionando para o WhatsApp principal */}
+                  {/* Botão de curso atualizado para usar a mesma mensagem padrão do WhatsApp */}
                   <button 
                     onClick={() => handleWhatsApp()} 
                     className="w-full bg-bias-blue text-white py-4 md:py-5 rounded-[1.2rem] md:rounded-[1.5rem] font-black hover:bg-bias-navy shadow-lg transition-all uppercase text-[10px] md:text-[11px] tracking-[0.2em] active:scale-95 hover-shine"
