@@ -156,10 +156,10 @@ const App: React.FC = () => {
                       <span className="bg-bias-yellow/10 text-bias-gold px-2 md:px-3 py-1 rounded-lg text-[8px] md:text-[9px] font-black uppercase">100% ONLINE</span>
                     </div>
                   </div>
-                  {/* Botão de curso transformado para falar com consultor no WhatsApp */}
+                  {/* Botão usual de alta conversão redirecionando para o WhatsApp principal */}
                   <button 
-                    onClick={() => handleWhatsApp(`Olá! Gostaria de detalhes sobre o curso ${course.title}`)} 
-                    className="w-full bg-bias-blue text-white py-4 md:py-5 rounded-[1.2rem] md:rounded-[1.5rem] font-black hover:bg-bias-navy shadow-lg transition-all uppercase text-[10px] md:text-[11px] tracking-[0.2em] active:scale-95"
+                    onClick={() => handleWhatsApp()} 
+                    className="w-full bg-bias-blue text-white py-4 md:py-5 rounded-[1.2rem] md:rounded-[1.5rem] font-black hover:bg-bias-navy shadow-lg transition-all uppercase text-[10px] md:text-[11px] tracking-[0.2em] active:scale-95 hover-shine"
                   >
                     FALAR COM UM CONSULTOR
                   </button>
@@ -206,8 +206,8 @@ const App: React.FC = () => {
               <span className="text-bias-yellow uppercase">O Diploma é seu por direito.</span>
             </h2>
             <p className="text-base md:text-xl text-white/80 font-medium max-w-xl mx-auto lg:mx-0">Use sua experiência comprovada para obter o diploma técnico em tempo recorde e com validade nacional, tudo de forma digital e segura.</p>
-            <button onClick={() => handleWhatsApp("Olá! Quero saber sobre o diploma por experiência.")} className="w-full md:w-auto bg-white text-bias-blue px-10 md:px-14 py-5 md:py-7 rounded-[1.5rem] md:rounded-[2rem] font-black text-lg md:text-xl hover:bg-bias-yellow transition-all shadow-[0_20px_60px_rgba(0,0,0,0.3)] uppercase tracking-tight hover:scale-105 active:scale-95 animate-pulse-soft">
-              AVALIAR AGORA
+            <button onClick={() => handleWhatsApp()} className="w-full md:w-auto bg-white text-bias-blue px-10 md:px-14 py-5 md:py-7 rounded-[1.5rem] md:rounded-[2rem] font-black text-lg md:text-xl hover:bg-bias-yellow transition-all shadow-[0_20px_60px_rgba(0,0,0,0.3)] uppercase tracking-tight hover:scale-105 active:scale-95 animate-pulse-soft">
+              FALAR COM UM CONSULTOR
             </button>
           </div>
         </div>
@@ -324,7 +324,7 @@ const App: React.FC = () => {
             <div className="space-y-8 md:space-y-10 reveal">
               <h4 className="font-black text-[10px] md:text-xs mb-6 md:mb-10 uppercase tracking-[0.3em] md:tracking-[0.4em] text-bias-yellow">FALE CONOSCO</h4>
               <button onClick={() => handleWhatsApp()} className="w-full bg-bias-blue text-white py-5 md:py-6 rounded-[1.2rem] md:rounded-[1.5rem] font-black hover:bg-bias-navy hover:shadow-[0_10px_30px_rgba(0,71,171,0.3)] transition-all text-[10px] md:text-xs uppercase tracking-[0.2em] active:scale-95">
-                INICIAR MATRÍCULA
+                FALAR COM UM CONSULTOR
               </button>
             </div>
           </div>
